@@ -1,0 +1,1 @@
+docker run  --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" --device=/dev/kvm:/devb/kvm --device=/dev/net/tun:/dev/net/tun --cap-add NET_ADMIN --hostname lab -it -v /mnt/external_drive/sstate-cache:/home/build/sstate-cache -v /mnt/external_drive/downloads:/home/build/downloads -v `pwd`/../yocto:/home/build/yocto kris

@@ -1,0 +1,12 @@
+docker run \
+--device=/dev/kvm:/devb/kvm \
+--device=/dev/net/tun:/dev/net/tun \
+--cap-add NET_ADMIN \
+--hostname buildserver \
+-it \
+-v /mnt/external_drive/sstate-cache:/home/build/sstate-cache \
+-v /mnt/external_drive/downloads:/home/build/downloads \
+-v /tftpboot:/tftpboot \
+-v `pwd`:/home/build/work \
+-v /opt/tools:/opt/tools \
+-v /opt/bsps:/opt/bsps kris
